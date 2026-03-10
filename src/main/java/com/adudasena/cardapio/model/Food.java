@@ -1,9 +1,15 @@
 package com.adudasena.cardapio.model;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
-@Entity
-@Table
+@Table(name = "food")
+@Entity(name = "food")
 public class Food {
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String title;
+    private String image;
+    private Integer price;
 
 }
