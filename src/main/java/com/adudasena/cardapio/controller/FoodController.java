@@ -1,12 +1,11 @@
 package com.adudasena.cardapio.controller;
 
+import com.adudasena.cardapio.dto.FoodRequestDTO;
 import com.adudasena.cardapio.dto.FoodResponseDTO;
 import com.adudasena.cardapio.model.Food;
 import com.adudasena.cardapio.repository.FoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,6 +16,12 @@ public class FoodController {
     //instanciação, injeção de dependência
     @Autowired
     private FoodRepository repository;
+
+    @PostMapping
+    public void saveFood(@RequestBody FoodRequestDTO data) {
+
+    }
+
 
     @GetMapping
     //dto para nãor etornar direto a entidade como lista (boa prática)
