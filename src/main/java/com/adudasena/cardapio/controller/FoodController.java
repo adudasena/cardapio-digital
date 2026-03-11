@@ -17,6 +17,7 @@ public class FoodController {
     @Autowired
     private FoodRepository repository;
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping
     public void saveFood(@RequestBody FoodRequestDTO data) {
       Food foodData= new Food(data);  //dto -> entidade
@@ -24,7 +25,7 @@ public class FoodController {
       return;
     }
 
-
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
     //dto para nãor etornar direto a entidade como lista (boa prática)
     //melhor uma nova classe pra respostas e requests
