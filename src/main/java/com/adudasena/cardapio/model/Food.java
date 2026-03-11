@@ -1,4 +1,5 @@
 package com.adudasena.cardapio.model;
+import com.adudasena.cardapio.dto.FoodRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -19,4 +20,9 @@ public class Food {
     private String image;
     private Integer price;
 
+    public Food(FoodRequestDTO data) { //construtor
+        this.image= data.image();
+        this.price= data.price();
+        this.title= data.title();
+    }
 }
