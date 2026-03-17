@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+}
+
+/* Onde os cards ficam (a grade) */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Três colunas de largura igual */
+    gap: 16px; /* Espaçamento entre os cards */
+}
+
+
+/* O estilo do Card */
+.card {
+    background-color: #1a1a1a; /* Fundo escuro elegante */
+    border-radius: 12px;
+    width: 250px;
+    overflow: hidden; /* Garante que a imagem não saia das bordas */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeitinho de flutuar ao passar o mouse */
+}
+
+/* O segredo do enquadramento da imagem */
+.card img {
+    width: 100%;
+    height: 200px;     /* Altura fixa para todos os cards ficarem iguais */
+    object-fit: cover; /* Corta a imagem para preencher o espaço sem esticar */
+    display: block;
+}
+
+/* Estilo dos textos dentro do card */
+.card h2 {
+    color: #fff;
+    font-size: 1.25rem;
+    margin: 16px 16px 8px;
+}
+
+.card p {
+    color: #468c7e; /* Cor de destaque para o valor */
+    font-weight: bold;
+    margin: 0 16px 16px;
+}
