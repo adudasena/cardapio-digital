@@ -11,6 +11,8 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
     margin-top: 40px;
+    max-width: 1200px; /* Evita que os cards espalhem demais em telas gigantes */
+    margin: 0 auto;    /* Centraliza o grid na tela */
 }
 
 .container button {
