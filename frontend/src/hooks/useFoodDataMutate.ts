@@ -1,6 +1,6 @@
 import axios, { type AxiosPromise } from "axios"
 import type { FoodData } from "../interface/FoodData";
-import { useMutation, useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const API_URL = 'http://localhost:8080';
 
@@ -9,17 +9,15 @@ const postData = async (data: FoodData): AxiosPromise<any> => {
     return response;
 };
 
-export function useFoodData(){
+export function useFoodDataMutate(){
     const queryClient= useQueryClient();
-    const query= useMutation({
+    const mutate= useMutation({
     mutationFn: postData,
     retry: 2, /* Quantas vezes tentar antes de mostrar o erro*/
     onSuccess: () => {
      queryClient.invalidateQueries({ queryKey: ['foodData'] }) /* Invalida a query para que ela seja refetchada e mostre os dados atualizados */
-}7})
+    }
+})
 
-return {
-    ...query,
-    data: query.data?.data
-}
+return mutate;
 }
