@@ -1,20 +1,19 @@
 .container {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    justify-content: center;
-    width: 100vw;
+    align-items: center;
+    width: 100%; 
 }
 
 .card-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
-    margin-top: 40px;
-    max-width: 1200px; /* Evita que os cards espalhem demais em telas gigantes */
-    margin: 0 auto;    /* Centraliza o grid na tela */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 24px;
+    width: 100%;
+    max-width: 1050px; 
+    margin: 40px auto;
+    padding: 0 20px;  
 }
-
 .container button {
     background-color: #0275d8;
     color: white;

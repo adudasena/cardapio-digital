@@ -1,0 +1,69 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal-body {
+    background-color: white;
+    padding: 32px;
+    width: 90%;
+    max-width: 600px; /* Largura igual à do vídeo dela */
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os textos à esquerda como o dela */
+    position: relative;
+}
+
+.modal-body h2 {
+    color: #242424;
+    font-size: 28px;
+    margin-bottom: 24px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ocupa a largura total da caixa branca */
+    gap: 10px;
+}
+
+.input-container input {
+    width: 100%;
+    box-sizing: border-box; /* Impede o input de "vazar" da caixa */
+}
+
+.input-container label {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 4px;
+}
+
+.btn-secondary {
+    background-color: #3a44f8;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 24px;
+}
+
+.btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+}

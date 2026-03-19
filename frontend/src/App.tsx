@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css'
 import { Card } from './components/card/card.tsx';
 import { useFoodData } from './hooks/useFoodData';
+import type { FoodData } from './interface/FoodData.ts';
 import { CreateModal } from './components/create-modal/create-modal.tsx';
 
 function App() {
@@ -12,21 +13,22 @@ function App() {
     setIsModalOpen(prev => !prev);
   }
 
-  return (
+return (
     <div className="container">
       <h1> Cardápio </h1>
       <div className='card-grid'> 
-       {data?.map(foodData => ( 
-       <Card 
-        key={foodData.id}
-        price={foodData.price}
-        title={foodData.title}
-        image={foodData.image}
-        />
-      ))}
-      {isModalOpen && <CreateModal />} 
-      <button onClick={handleOpenModal} > Cadastrar novo item </button>
+        {data?.map(foodData => ( 
+          <Card 
+            key={foodData.id}
+            price={foodData.price}
+            title={foodData.title}
+            image={foodData.image}
+          />
+        ))}
       </div>
+      {/* Botão para abrir o modal */}
+      <button onClick={handleOpenModal} className="btn-open-modal">Novo</button>
+      {isModalOpen && <CreateModal closeModal={handleOpenModal} />} 
     </div>
   )
 }
