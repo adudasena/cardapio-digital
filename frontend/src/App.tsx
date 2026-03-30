@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './App.css'
 import { Card } from './components/card/card.tsx';
 import { useFoodData } from './hooks/useFoodData';
-import type { FoodData } from './interface/FoodData.ts';
 import { CreateModal } from './components/create-modal/create-modal.tsx';
 
 function App() {
